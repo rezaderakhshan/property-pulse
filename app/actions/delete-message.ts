@@ -6,7 +6,7 @@ import { getSessionUser } from "@/utils/getSessionUser";
 import { ObjectId } from "mongoose";
 import { revalidatePath } from "next/cache";
 
-export const deleteMessage = async (messageId) => {
+export const deleteMessage = async (messageId: string) => {
   const sessionUser = await getSessionUser();
   if (!sessionUser || !sessionUser.userId) {
     throw new Error("User ID is required!");
